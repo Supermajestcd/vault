@@ -200,3 +200,16 @@ jobs:
       artifact-revision: ${{ needs.product-metadata.outputs.vault-revision }}
       artifact-version: ${{ needs.product-metadata.outputs.vault-version }}
     secrets: inherit
+
+  success:
+    runs-on: ubuntu-latest
+    needs:
+      - build-other
+      - build-linux
+      - build-darwin
+      - build-docker
+      - build-ubi
+      - enos
+      - enos-docker-k8s
+    steps:
+      - run: echo "All build and integration workflows have succeeded!"
