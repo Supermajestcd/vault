@@ -2,12 +2,17 @@
 name: build
 
 on:
-  push:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
     branches:
       - docs/**
       - backport/docs/**
 
 jobs:
+  # Trigger the build / success workflow as it is required by branch restrictions
   success:
     runs-on: ubuntu-latest
     steps:
