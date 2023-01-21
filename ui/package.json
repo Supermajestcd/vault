@@ -249,7 +249,7 @@
   "dependencies": {
     "handlebars": "^4.3.0",
     "highlight.js": "^10.4.1",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.13",
     "node-notifier": "^8.0.1"
   }
